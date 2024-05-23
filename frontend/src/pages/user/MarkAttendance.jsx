@@ -101,7 +101,7 @@ export default function MarkAttendance() {
   const handleLogout = () => {
     axios.post('http://localhost:3000/api/v1/user/logout', {}, { withCredentials: true })
       .then(() => {
-        navigate('/admin/login');
+        navigate('/');
       })
       .catch(error => {
         console.error('Error logging out:', error);
@@ -128,7 +128,6 @@ export default function MarkAttendance() {
           </Button>
           <Button className="text-white bg-red-600 outline" onClick={() => {
             handleLogout();
-            navigate('/');
             }}>
             <LogOutIcon className="h-5 w-5 mr-2" />
             Logout
